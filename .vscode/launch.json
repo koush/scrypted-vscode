@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name"        : "Duk Attach",
+            "type"        : "duk",
+            "request"     : "attach",
+            "stopOnEntry" : false,
+            
+            "address"     : "192.168.1.89",
+            "port"        : 9091,
+            "debugLog"    : false,
+
+            "localRoot"   : "${workspaceRoot}",
+            "remoteRoot"  : "",
+            
+            "sourceMaps"  : true,
+            "outDir"      : "${workspaceRoot}"
+        },
+        {
+            "name"        : "Duk Attach Debug",
+            "type"        : "duk",
+            "request"     : "attach",
+            "stopOnEntry" : false,
+            
+            "address"     : "192.168.1.89",
+            "port"        : 9091,
+            "debugLog"    : true,
+            // "debugServer": 4711,
+
+            "localRoot"   : "${workspaceRoot}",
+            "remoteRoot"  : "",
+            
+            "sourceMaps"  : true,
+            "outDir"      : "${workspaceRoot}"
+        }
+    ]
+}
