@@ -1,5 +1,3 @@
-console.log('test');
-
 function VirtualDevice() {
 }
 
@@ -10,8 +8,10 @@ VirtualDevice.prototype.getOnOff = function() {
 }
 
 VirtualDevice.prototype.setOnOff = function(arg0) {
-  console.log('setOnOff was called!');
+  console.log('setOnOffcc was called!');
 }
 
+var i = 3;
+i = 4;
 
 return new VirtualDevice()

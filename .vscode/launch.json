@@ -5,23 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name"        : "Duk Attach",
+            "name"        : "Scrypted Debugger",
             "type"        : "duk",
             "request"     : "attach",
             "stopOnEntry" : false,
             
-            "address"     : "192.168.1.89",
+            "address"     : "${config:scrypted.debugHost}",
             "port"        : 9091,
-            "debugLog"    : false,
 
             "localRoot"   : "${workspaceRoot}",
-            "remoteRoot"  : "",
-            
-            "sourceMaps"  : true,
-            "outDir"      : "${workspaceRoot}"
+
+            "preLaunchTask": "scrypted: deploy",
+
+            // uncomment and point to generated source and map files if using
+            // a transpiler or minifier or whatever.
+            // inline sourcemaps are not supported.
+            // "sourceMaps"  : true,
+            // "outDir"      : "${workspaceRoot}"
         },
         {
-            "name"        : "Duk Attach Debug",
+            "name"        : "Scrypted Debugger (debug the debugger)",
             "type"        : "duk",
             "request"     : "attach",
             "stopOnEntry" : false,
@@ -29,10 +32,9 @@
             "address"     : "192.168.1.89",
             "port"        : 9091,
             "debugLog"    : true,
-            // "debugServer": 4711,
+            "debugServer": 4711,
 
             "localRoot"   : "${workspaceRoot}",
-            "remoteRoot"  : "",
             
             "sourceMaps"  : true,
             "outDir"      : "${workspaceRoot}"
