@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -z "$1" ]
 then
     echo "scrypted.debugHost not defined in workspace settings"
@@ -28,7 +30,7 @@ fi
 
 strippedFilename=$(basename $filename)
 
-DEBUG_URL="https://$1:9443/component/script/debug?scriptId=$2&filename=$strippedFilename"
+DEBUG_URL="https://$1:9443/component/script/debug?scriptId=$2&filename=$strippedFilename&engine=duktape"
 echo "deploying to $DEBUG_URL"
 
 curl -k --data-binary @$filename -H "Content-Type: text/plain" $DEBUG_URL

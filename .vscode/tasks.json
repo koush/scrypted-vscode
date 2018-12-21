@@ -5,12 +5,22 @@
     "tasks": [
         {
             "label": "scrypted: deploy",
-            "type": "shell",
+            "type": "process",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
             "osx": {
-                "command": ". ${workspaceRoot}/.vscode/scrypted-deploy.sh ${config:scrypted.debugHost} ${config:scrypted.debugScriptId} ${file}"
+                "command": "${workspaceRoot}/.vscode/scrypted-deploy.sh",
+                "args": ["${config:scrypted.debugHost}", "${config:scrypted.debugScriptId}", "${file}"]
             },
             "linux": {
-                "command": ". ${workspaceRoot}/.vscode/scrypted-deploy.sh ${config:scrypted.debugHost} ${config:scrypted.debugScriptId} ${file}"
+                "command": "${workspaceRoot}/.vscode/scrypted-deploy.sh",
+                "args": ["${config:scrypted.debugHost}", "${config:scrypted.debugScriptId}", "${file}"]
             }
         }
     ]

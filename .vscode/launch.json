@@ -14,7 +14,9 @@
             "port"        : 9091,
 
             "localRoot"   : "${workspaceRoot}",
-
+            // "debugLog"    : true,
+            // "debugServer": 4711,
+            
             "preLaunchTask": "scrypted: deploy",
 
             // uncomment and point to generated source and map files if using
@@ -30,7 +32,7 @@
             "stopOnEntry" : false,
             
             "address"     : "192.168.1.89",
-            "port"        : 9091,
+            "port"        : 9092,
             "debugLog"    : true,
             "debugServer": 4711,
 
