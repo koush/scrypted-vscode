@@ -14,6 +14,27 @@
             "port"        : 9091,
 
             "localRoot"   : "${workspaceRoot}",
+            "debugLog"    : false,
+            // "debugServer": 4711,
+
+            "preLaunchTask": "scrypted: deploy",
+
+            // uncomment and point to generated source and map files if using
+            // a transpiler or minifier or whatever.
+            // inline sourcemaps are not supported.
+            "sourceMaps"  : true,
+            "outDir"      : "${workspaceRoot}/out"
+        },
+        {
+            "name"        : "Scrypted Debugger (debug debugger)",
+            "type"        : "duk",
+            "request"     : "attach",
+            "stopOnEntry" : false,
+            
+            "address"     : "${config:scrypted.debugHost}",
+            "port"        : 9091,
+
+            "localRoot"   : "${workspaceRoot}",
             // "debugLog"    : true,
             // "debugServer": 4711,
             
@@ -22,24 +43,11 @@
             // uncomment and point to generated source and map files if using
             // a transpiler or minifier or whatever.
             // inline sourcemaps are not supported.
-            // "sourceMaps"  : true,
-            // "outDir"      : "${workspaceRoot}"
-        },
-        {
-            "name"        : "Scrypted Debugger (debug the debugger)",
-            "type"        : "duk",
-            "request"     : "attach",
-            "stopOnEntry" : false,
-            
-            "address"     : "192.168.1.89",
-            "port"        : 9092,
+            "sourceMaps"  : true,
+            "outDir"      : "${workspaceRoot}/out",
+
             "debugLog"    : true,
             "debugServer": 4711,
-
-            "localRoot"   : "${workspaceRoot}",
-            
-            "sourceMaps"  : true,
-            "outDir"      : "${workspaceRoot}"
         }
     ]
 }
