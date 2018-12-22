@@ -2,13 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 var outputFilename = process.env.TARGET ? path.basename(process.env.TARGET.split('.').slice(0, -1).join('.')) + '.js' : null;
+var out = path.resolve(__dirname, 'out');
 
 module.exports = {
     output: {
-        path: path.resolve(__dirname, 'out'),
+        path: out,
         filename: outputFilename,
         devtoolModuleFilenameTemplate: function (info) {
-            return "../src/" + path.basename(info.absoluteResourcePath);
+            return path.relative(out, info.absoluteResourcePath);
         }
     },
     module: {
