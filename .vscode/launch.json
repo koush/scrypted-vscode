@@ -9,40 +9,22 @@
             "type"        : "duk",
             "request"     : "attach",
             "stopOnEntry" : false,
-            
             "address"     : "${config:scrypted.debugHost}",
             "port"        : 9091,
-
             "localRoot"   : "${workspaceRoot}",
-            "debugLog"    : false,
-            // "debugServer": 4711,
-
             "preLaunchTask": "scrypted: deploy",
-
-            // uncomment and point to generated source and map files if using
-            // a transpiler or minifier or whatever.
-            // inline sourcemaps are not supported.
             "sourceMaps"  : true,
-            "outDir"      : "${workspaceRoot}/out"
+            "outDir"      : "${workspaceRoot}/out",
         },
         {
-            "name"        : "Scrypted Debugger (debug debugger)",
+            "name"        : "Scrypted Debugger (debug VSCode Extension)",
             "type"        : "duk",
             "request"     : "attach",
             "stopOnEntry" : false,
-            
             "address"     : "${config:scrypted.debugHost}",
             "port"        : 9091,
-
             "localRoot"   : "${workspaceRoot}",
-            // "debugLog"    : true,
-            // "debugServer": 4711,
-            
             "preLaunchTask": "scrypted: deploy",
-
-            // uncomment and point to generated source and map files if using
-            // a transpiler or minifier or whatever.
-            // inline sourcemaps are not supported.
             "sourceMaps"  : true,
             "outDir"      : "${workspaceRoot}/out",
 
