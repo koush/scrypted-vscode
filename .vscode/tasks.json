@@ -15,20 +15,20 @@
                 "clear": false
             },
             "dependsOn": [
-                "webpack",
+                "scrypted: webpack",
             ],
             "osx": {
                 "command": "${workspaceRoot}/.vscode/scrypted-deploy.sh",
-                "args": ["${config:scrypted.debugHost}", "${config:scrypted.debugScriptId}", "${file}", "${workspaceRoot}/out"]
+                "args": ["${config:scrypted.debugHost}", "${file}", "${workspaceRoot}/out"]
             },
             "linux": {
                 "command": "${workspaceRoot}/.vscode/scrypted-deploy.sh",
-                "args": ["${config:scrypted.debugHost}", "${config:scrypted.debugScriptId}", "${file}"]
+                "args": ["${config:scrypted.debugHost}", "${file}", "${workspaceRoot}/out"]
             }
         },
 
         {
-            "label": "webpack",
+            "label": "scrypted: webpack",
             "type": "shell",
             "options": {
                 "env": {
@@ -44,11 +44,12 @@
                 "clear": false
             },
             "command": "${workspaceFolder}/node_modules/.bin/webpack-cli",
-            "args": ["--config", "webpack.config.js", "babel-polyfill", "${file}"],
+            "args": ["--config", "webpack.config.js"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
         },
+
     ]
 }

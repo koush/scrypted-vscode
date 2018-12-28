@@ -12,24 +12,17 @@
             "address"     : "${config:scrypted.debugHost}",
             "port"        : 9091,
             "localRoot"   : "${workspaceRoot}",
+
+            // see webpack.config.js for more options.
             "preLaunchTask": "scrypted: deploy",
-            "sourceMaps"  : true,
-            "outDir"      : "${workspaceRoot}/out",
-        },
-        {
-            "name"        : "Scrypted Debugger (debug VSCode Extension)",
-            "type"        : "duk",
-            "request"     : "attach",
-            "stopOnEntry" : false,
-            "address"     : "${config:scrypted.debugHost}",
-            "port"        : 9091,
-            "localRoot"   : "${workspaceRoot}",
-            "preLaunchTask": "scrypted: deploy",
+
+            // required due to webpack and transpiling
             "sourceMaps"  : true,
             "outDir"      : "${workspaceRoot}/out",
 
-            "debugLog"    : true,
-            "debugServer": 4711,
-        }
+            // uncomment to debug the Duktape Debugger
+            // "debugLog"    : true,
+            // "debugServer": 4711,
+        },
     ]
 }
