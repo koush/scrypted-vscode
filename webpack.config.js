@@ -7,16 +7,6 @@ var out = path.resolve(__dirname, 'out');
 var polyfillPlugins = [];
 var entry = [];
 
-// change this value to enable or disable babel polyfill. using babel will grealy increase the size of the script.
-// typescript is recommended for this reason.
-var useBabel = false;
-if (useBabel) {
-    polyfillPlugins.push(new webpack.ProvidePlugin({
-        'babel-polyfill': 'global.Promise'
-    }));
-    entry.push('babel-polyfill');
-}
-
 entry.push(process.env.TARGET);
 
 module.exports = {
@@ -26,7 +16,10 @@ module.exports = {
         filename: outputFilename,
         devtoolModuleFilenameTemplate: function (info) {
             return path.relative(out, info.absoluteResourcePath);
-        }
+        },
+
+        // export everything to a var "window" which is really just an alias for exports.
+		libraryTarget: "window",
     },
     module: {
         rules: [
@@ -34,10 +27,7 @@ module.exports = {
                 test: /\.m?js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
+                    loader: 'babel-loader'
                 }
             },
 
