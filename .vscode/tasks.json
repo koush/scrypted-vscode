@@ -5,36 +5,7 @@
     "tasks": [
         {
             "label": "scrypted: deploy",
-            "type": "process",
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": false
-            },
-            "dependsOn": [
-                "scrypted: webpack",
-            ],
-            "osx": {
-                "command": "${workspaceRoot}/.vscode/scrypted-deploy.sh",
-                "args": ["${config:scrypted.debugHost}", "${file}", "${workspaceRoot}/out"]
-            },
-            "linux": {
-                "command": "${workspaceRoot}/.vscode/scrypted-deploy.sh",
-                "args": ["${config:scrypted.debugHost}", "${file}", "${workspaceRoot}/out"]
-            }
-        },
-
-        {
-            "label": "scrypted: webpack",
             "type": "shell",
-            "options": {
-                "env": {
-                    "TARGET": "${file}"
-                }
-            },
             "presentation": {
                 "echo": true,
                 "reveal": "silent",
@@ -43,13 +14,7 @@
                 "showReuseMessage": true,
                 "clear": false
             },
-            "command": "${workspaceFolder}/node_modules/.bin/webpack-cli",
-            "args": ["--config", "webpack.config.js"],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "command": "npm run scrypted-debug"
         },
-
     ]
 }

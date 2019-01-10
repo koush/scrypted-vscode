@@ -13,7 +13,6 @@
             "port"        : 9091,
             "localRoot"   : "${workspaceRoot}",
 
-            // see webpack.config.js for more options.
             "preLaunchTask": "scrypted: deploy",
 
             // required due to webpack and transpiling

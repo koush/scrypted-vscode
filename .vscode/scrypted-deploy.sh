@@ -9,19 +9,20 @@ debugHost=$1
 
 if [ -z "$2" ]
 then
-    echo "no deploy script provided"
+    echo "outDir paramter missing. Please ensure it is provided in an argument in tasks.json and has a matching value in launch.json."
     exit 2
 fi
-
-filename=$2
-extension="${filename##*.}"
+outdir=$2
 
 if [ -z "$3" ]
 then
-    echo "outDir paramter missing. Please ensure it is provided in an argument in tasks.json and has a matching value in launch.json."
+
+    echo "no deploy script provided"
     exit 3
+else
+    filename=$3
+    extension="${filename##*.}"
 fi
-outdir=$3
 
 # all files must be transpiled since duktape is ecmascript 5. find the transpiled file.
 filenameNoExtension=$(basename "${filename%.*}")
