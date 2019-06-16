@@ -1,11 +1,11 @@
 // https://developer.scrypted.app/#getting-started
 import axios from 'axios';
 import sdk from "@scrypted/sdk";
-const { log, DeviceState } = sdk;
+const { log, ScryptedDeviceBase } = sdk;
 
 log.i('Hello World. This will create a virtual OnOff device.');
 
-class Device extends DeviceState {
+class Device extends ScryptedDeviceBase {
     turnOff() {
         // set a breakpoint here.
         log.i('turnOff was called!');
