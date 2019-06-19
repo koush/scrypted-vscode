@@ -1,7 +1,8 @@
 // https://developer.scrypted.app/#getting-started
 import axios from 'axios';
+import { ScryptedDeviceBase } from "@scrypted/sdk";
 import sdk from "@scrypted/sdk";
-const { log, ScryptedDeviceBase } = sdk;
+const { log } = sdk;
 
 log.i('Hello World. This will create a virtual OnOff device.');
 
