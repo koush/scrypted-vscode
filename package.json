@@ -17,9 +17,6 @@
       "type": "Device",
       "interfaces": [
          "OnOff"
-      ],
-      "events": [
-         "OnOff"
       ]
    },
    "devDependencies": {
