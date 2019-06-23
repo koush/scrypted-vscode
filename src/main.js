@@ -11,6 +11,11 @@ log.i('Hello World. This will create a virtual OnOff device.');
 // to add support for more capabilities, like Brightness or Lock.
 
 class Device extends ScryptedDeviceBase {
+    constructor() {
+        super();
+        // ensure that the "on" state is not null.
+        this.on = this.on || false;
+    }
     turnOff() {
         // set a breakpoint here.
         log.i('turnOff was called!');
